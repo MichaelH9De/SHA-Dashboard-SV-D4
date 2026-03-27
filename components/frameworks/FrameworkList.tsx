@@ -1,6 +1,10 @@
-import { frameworks } from '@/lib/data/frameworks'
-import FrameworkCard from './FrameworkCard'
-
 export default function FrameworkList() {
-  return <div className="grid gap-4 xl:grid-cols-2">{frameworks.map((framework) => <FrameworkCard key={framework.id} framework={framework} />)}</div>
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-6 text-center">
+      <h3 className="text-lg font-semibold text-slate-950">No frameworks yet</h3>
+      <p className="mt-2 text-sm text-slate-600">
+        Framework creation will be added next.
+      </p>
+    </div>
+  )
 }
