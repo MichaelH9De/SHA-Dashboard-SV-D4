@@ -33,12 +33,17 @@ export function useProjects() {
   }
 
   const addProject = (project: Project) => {
-    saveProjects([project, ...projects])
+    setProjects((currentProjects) => {
+      const nextProjects = [project, ...currentProjects]
+      storage.set(STORAGE_KEY, JSON.stringify(nextProjects))
+      return nextProjects
+    })
   }
 
   return {
     projects,
     isLoaded,
     addProject,
+    saveProjects,
   }
 }
