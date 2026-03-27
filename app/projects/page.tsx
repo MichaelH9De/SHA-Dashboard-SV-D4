@@ -5,12 +5,25 @@ import { useProjects } from '@/lib/hooks/useProjects'
 import Button from '@/components/ui/Button'
 import type { Project } from '@/types'
 
-const initialForm = {
+type ProjectStatus = Project['status']
+
+type ProjectFormState = {
+  name: string
+  client: string
+  location: string
+  description: string
+  status: ProjectStatus
+  startDate: string
+  endDate: string
+  deliveryNotes: string
+}
+
+const initialForm: ProjectFormState = {
   name: '',
   client: '',
   location: '',
   description: '',
-  status: 'draft' as const,
+  status: 'draft',
   startDate: '',
   endDate: '',
   deliveryNotes: '',
@@ -18,7 +31,7 @@ const initialForm = {
 
 export default function Page() {
   const { projects, addProject, isLoaded } = useProjects()
-  const [form, setForm] = useState(initialForm)
+  const [form, setForm] = useState<ProjectFormState>(initialForm)
   const [message, setMessage] = useState('')
 
   if (!isLoaded) return <div className="p-8">Loading...</div>
@@ -72,7 +85,7 @@ export default function Page() {
           <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Project name" className="rounded-2xl border border-slate-300 px-4 py-3" />
           <input value={form.client} onChange={(e) => setForm({ ...form, client: e.target.value })} placeholder="Client" className="rounded-2xl border border-slate-300 px-4 py-3" />
           <input value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} placeholder="Location" className="rounded-2xl border border-slate-300 px-4 py-3" />
-          <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value as 'draft' | 'active' | 'completed' })} className="rounded-2xl border border-slate-300 px-4 py-3">
+          <select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value as ProjectStatus })} className="rounded-2xl border border-slate-300 px-4 py-3">
             <option value="draft">Draft</option>
             <option value="active">Active</option>
             <option value="completed">Completed</option>
