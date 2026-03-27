@@ -11,10 +11,10 @@ export default function FrameworkCard({ framework }: { framework: Framework }) {
           <h3 className="text-xl font-semibold text-slate-950">{framework.name}</h3>
           <p className="mt-2 text-sm text-slate-600">{framework.description}</p>
         </div>
-        <Badge tone="brand">{framework.measureIds.length} measures</Badge>
+        <Badge tone="brand">{framework.metricIds.length} metrics</Badge>
       </div>
       <div className="mt-5 flex items-center justify-between">
-        <div className="text-sm text-slate-500">{framework.owner} - {framework.region}</div>
+        <div className="text-sm text-slate-500">{framework.organisation} - {framework.region}</div>
         <Link href={`/frameworks/${framework.id}`} className="text-sm font-semibold text-indigo-600">Open framework</Link>
       </div>
     </Card>

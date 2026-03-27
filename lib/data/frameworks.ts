@@ -4,10 +4,15 @@ export const frameworks: Framework[] = [
   {
     id: 'rise',
     name: 'Rise Framework',
-    owner: 'Liverpool City Region',
+    organisation: 'Liverpool City Region',
+    owner: 'Regional delivery team',
     region: 'North West',
-    description: 'Regional social value framework focused on inclusive growth and skills uplift.',
-    measureIds: [
+    description: 'Regional social value framework focused on inclusive growth, employability and local supply chain participation.',
+    status: 'active',
+    createdAt: '2025-01-10',
+    updatedAt: '2026-03-27',
+    tags: ['employment', 'skills', 'community'],
+    metricIds: [
       'volunteering-hours',
       'work-experience-weeks',
       'careers-advice-hours',
@@ -18,10 +23,15 @@ export const frameworks: Framework[] = [
   {
     id: 'toms',
     name: 'National TOMs',
-    owner: 'Social Value UK',
+    organisation: 'Social Value UK',
+    owner: 'Bid and social value team',
     region: 'UK',
-    description: 'National standardised themes, outcomes and measures for client reporting.',
-    measureIds: [
+    description: 'Standardised social value framework used for client commitments, tender submissions and delivery reporting.',
+    status: 'active',
+    createdAt: '2024-09-01',
+    updatedAt: '2026-03-27',
+    tags: ['national', 'procurement', 'reporting'],
+    metricIds: [
       'local-spend-gbp',
       'apprenticeships-started',
       'wellbeing-sessions',
@@ -33,10 +43,15 @@ export const frameworks: Framework[] = [
   {
     id: 'torus',
     name: 'Torus Community Charter',
-    owner: 'Torus Group',
+    organisation: 'Torus Group',
+    owner: 'Community investment team',
     region: 'North West',
-    description: 'Community-led priorities centred on employment, community and local spend.',
-    measureIds: [
+    description: 'Client-specific framework centred on employment, community support, local spend and inclusion.',
+    status: 'active',
+    createdAt: '2025-03-14',
+    updatedAt: '2026-03-27',
+    tags: ['housing', 'community', 'local spend'],
+    metricIds: [
       'volunteering-hours',
       'work-experience-weeks',
       'local-spend-gbp',
@@ -47,10 +62,15 @@ export const frameworks: Framework[] = [
   {
     id: 'wellbeing',
     name: 'Wellbeing Accelerator',
-    owner: 'Internal',
+    organisation: 'Internal',
+    owner: 'Strategy team',
     region: 'Multi-region',
-    description: 'Internal programme tracking health, wellbeing and inclusion outcomes.',
-    measureIds: [
+    description: 'Internal framework for tracking wellbeing, learning, access and inclusion outcomes across projects.',
+    status: 'draft',
+    createdAt: '2026-02-01',
+    updatedAt: '2026-03-27',
+    tags: ['wellbeing', 'health', 'internal'],
+    metricIds: [
       'wellbeing-sessions',
       'training-hours',
       'digital-inclusion-people',
